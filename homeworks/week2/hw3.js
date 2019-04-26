@@ -8,4 +8,4 @@ function reverse(str) {
   return tmpStr.join('');
 }
 
-reverse('hello');
+console.log(reverse('yoyoyo'));
