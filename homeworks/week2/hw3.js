@@ -1,5 +1,11 @@
 function reverse(str) {
-  return str;
+  const strSplit = str.split('');
+  const tmpStr = [];
+  let i = strSplit.length;
+  for (i; i >= 0; i -= 1) {
+    tmpStr.push(strSplit[i]);
+  }
+  return tmpStr.join('');
 }
 
-reverse('hello');
+console.log(reverse('yoyoyo'));

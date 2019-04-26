@@ -7,15 +7,15 @@
 
 ### 假設我今天去 Google 首頁搜尋框打上：JavaScript 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
 <pre>
-step 1：瀏覽器送出 request 給位在 Google DNS 上的 sever
+step 1：瀏覽器送出 request 給 server
 
-step 2：位在 Google DNS 上的 sever 收到 request 
+step 2：server 收到 request 
 
-step 3：sever 去詢問資料庫，查詢關鍵字 JavaScript
+step 3：server 去詢問資料庫，查詢關鍵字 JavaScript
 
-step 4：資料庫查詢完畢後，將結果回報給 sever 
+step 4：資料庫查詢完畢後，將結果回報給 server 
 
-step 5：sever 回傳 response 給瀏覽器 
+step 5：server 回傳 response 給瀏覽器 
 
 step 6：瀏覽器解析 response 的資訊並顯示出來
 </pre>
