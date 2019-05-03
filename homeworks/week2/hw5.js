@@ -1,10 +1,13 @@
 function join(str, concatStr) {
-  let tmpStr = 1;
+  let tmpStr = '';
   let i = 0;
   for (i; i < str.length; i += 1) {
-    tmpStr += str[i] + concatStr;
+    if (i === str.length - 1) {
+      tmpStr += str[i];
+    } else {
+      tmpStr += str[i] + concatStr;
+    }
   }
-  tmpStr = tmpStr.slice(1, str.length * 2);
   return tmpStr;
 }
 
@@ -16,5 +19,5 @@ function repeat(str, times) {
   }
   return repeatStr;
 }
-console.log(join(['a', 1, 'b', 2, 'c', 3], ','));
+console.log(join(['a', 1, 'b', 2, 'c', 3], '!!!'));
 console.log(repeat('a', 5));
