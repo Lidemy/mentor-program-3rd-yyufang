@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>HelloWorld</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .index{
+            background: rgb(39, 44, 49);
+            height: 50px;
+            display: flex;
+            align-items: baseline;
+
+        }
+
+        .index__name{
+            color: white;
+            font-size: 24px;
+            margin-top: 8px;
+            margin-left: 20px;
+            transition: all 0.5s;
+        }
+
+        .index__name:hover{
+            color:burlywood;
+        }
+
+        .index__home{
+            color:rgb(109, 109, 109);
+            font-size: 18px;
+            margin-left: 20px;
+            transition: all 0.5s;
+        }
+
+        .index__home:hover{
+            color:burlywood;
+        }
+
+        .index__Link{
+            color:rgb(109, 109, 109);
+            font-size: 18px;
+            margin-left: 20px;
+            transition: all 0.5s;
+        }
+
+        .index__Link:hover{
+            color:burlywood;
+        }
+        
+
+        .banner {
+            background: rgb(227, 231, 235);
+            padding: 50px;
+        }
+
+        .banner__title {
+            margin-left: 50px;
+            font-size: 72px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .banner__content {
+            margin-left: 50px;
+            margin-right: 50px;
+            padding: 20px 0px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .banner__button {
+            margin-left: 50px;
+            height: 60px;
+            width: 170px;
+            background:rgb(13, 96, 250);
+            border-radius: 5px;
+            position: relative;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        .banner__button:hover {
+            opacity: 0.75;
+        }
+
+        
+        .banner__button-content {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            white-space: nowrap;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .main {
+            background: white;
+            display: flex ;
+            padding: 50px;
+            justify-content: space-around;
+        }
+
+        .main__box {
+            max-width: 100%;
+            padding: 20px;
+        }
+        .main__box-title {
+            font-size: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .main__box-content {
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .main__box-botton {
+            margin-top: 20px;
+            background: rgb(90, 98, 105);
+            height: 40px;
+            width: 135px;
+            position: relative;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        .main__box-botton:hover {
+            opacity: 0.75;
+        }
+
+        .main__box-botton-content{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .info {
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 20px;
+            padding: 10px;
+            border-top: 1px solid gray;
+        }
+
+        .info__content{
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media screen and (max-width: 970px){
+
+            .banner {
+                background: rgb(227, 231, 235);
+                padding: 20px;
+            }
+
+            .main {
+                background: white;
+                display: block ;
+                padding: 50px ;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="index">
+        <div class="index__name">Navbar</div>
+        <div class="index__home">Home</div>
+        <div class="index__Link">Link</div>
+    </div>
+
+    <div class="banner">
+        <div class="banner__title">Hello, World!</div>
+        <div class="banner__content">
+            This is a templete for a simple marketing or informational website. It includes a large callout called a
+            junbotron and three
+            supporting pieces of content. Use it as a starting point too create something more unique.
+        </div>
+        <div class="banner__button">
+            <div class="banner__button-content">
+                Learn more>>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main__box">
+            <div class="main__box-title">Heading</div>
+            <div class="main__box-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+            <div class="main__box-botton">
+                <div class="main__box-botton-content">View details>></div>
+            </div>
+        </div>
+        <div class="main__box">
+            <div class="main__box-title">Heading</div>
+            <div class="main__box-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+            <div class="main__box-botton">
+                <div class="main__box-botton-content">View details>></div>
+            </div>
+        </div>
+        <div class="main__box">
+            <div class="main__box-title">Heading</div>
+            <div class="main__box-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+            <div class="main__box-botton">
+                <div class="main__box-botton-content">View details>></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info">
+        <div class="info__content">© Company 2017-2018</div>
+    </div>
+
+</body>
+</html>
