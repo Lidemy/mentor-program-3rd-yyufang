@@ -132,13 +132,15 @@
       let result = document.querySelector('.result'); //string
       let tmpResult = '';
       let operate = '';
+      let operation = false; //紀錄上個按鈕是否為運算子
 
       document.querySelector('.btn').addEventListener('click',(e)=>{
         // 數字
         if (e.target.className === 'digit'){
-          if (result.innerText === '0' || operate != ''){
+          if (result.innerText === '0' || operation === true){
             result.innerText = ''
             result.innerText += e.target.innerText
+            operation = false;
           }else{
             result.innerText += e.target.innerText
           }
@@ -157,6 +159,7 @@
             operate = e.target.getAttribute('data-value') //把運算子改成這輪的輸入
             tmpResult = result.innerText  //把目前結果暫存
             }
+            operation = true;
         }
         // 鍵入 AC 時歸零
         if (e.target.className === 'AC'){
