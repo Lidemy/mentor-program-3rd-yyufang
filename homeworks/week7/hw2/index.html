@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week7__homework2</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background: rgb(246, 232, 224);
+    }
+    .banner{
+      height: 250px;
+      background: url(https://lh4.googleusercontent.com/sAvtic6WzLRcGC485d2irc6Q36VS9GaiIj2TjL9AkbD1t3RjwacfNkJmmUe9fh9c0WV-ZVKQcw=w1200);
+      background-size: cover;
+      background-position: center;
+      background-repeat: np-repeat;
+    }
+    .form{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 450px;
+      border-top: 10px rgb(252, 112, 51) solid;
+      background: white;
+      padding: 50px 0px 0px;
+    }
+    .form__title{
+      font-size: 30px;
+    
+    }
+
+    .form__intro{
+      line-height: 1em;
+      font-size: 11px;
+    }
+
+    .form__notice{
+      font-size: 8px;
+      color: rgb(175, 41, 41);
+    }
+
+    .form__block{
+      margin: 0px 15px 0px; 
+      padding: 10px 15px 10px;
+    }
+    .star{
+      color: rgb(175, 41, 41);
+    }
+    .form__block_describe{
+      font-size: 12px;
+    }
+    .form__block_content{
+      font-size: 14px;
+    }
+    input{
+      margin-top: 20px;
+      font-size: 14px; 
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      height: 1.3rem;
+    }
+    .form__block_summit{
+      padding: 10px 40px 10px;
+    }
+
+    #summit_btn{
+      height: 30px;
+      width: 80px;
+      border-radius: 5px;
+      background: rgb(78, 126, 249);
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
+
+    .summit_block_notice{
+      margin: 20px 0px 10px;
+      font-size: 14px;
+      color: gray;
+
+    }
+
+    footer{
+      background: rgb(246, 232, 224);
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+    }
+
+    .footer_logo {
+      margin-top: 20px;
+    }
+
+    #footer_logo_pic{
+      opacity: 0.3;
+    }
+
+    .no_answer{
+      background: rgb(251, 225, 223);
+    }
+
+    .require{
+      color: rgb(175, 41, 41); 
+      font-size: 14px; 
+      margin-top: 5px;
+    }
+
+    footer{
+      padding: 20px 15px 20px;
+
+    }
+    .hidden{
+      visibility: hidden;
+    }
+    
+  </style>
+</head>
+
+
+<body> 
+  
+  <div class="wrapper">
+    <div class="banner"></div>
+    <form class="form" onsubmit="return showResults()" accept-charset="utf-8">
+      <!-- onsubmit 檢查後再送出 form -->
+      <div class="form__block form__title">程式導師實驗計畫第三期報名表單</div>
+      <div class="form__block form__intro">
+        詳情請參考：<a href="https://medium.com/hulis-blog/mentor-program-3rd-47a2e85e33b3">https://medium.com/hulis-blog/mentor-program-3rd-47a2e85e33b3</a>
+        <br>
+        <br>
+        填完之後請務必按照文章內的說明再寄信給我，才算報名成功喔
+      </div>
+      <div class="form__block form__notice">*必填</div>
+  
+      <div class="form__block form__block_email">
+        <div class="form__block_title">電子郵件地址<span class="star"> *</span></div>
+        <div><input type="text" id="email" name="email" placeholder="您的電子郵件"></div>
+        <div class="require hidden">這是必填問題</div>
+      </div>
+      
+      <br>
+      <br>
+  
+      <div class="form__block form__block_nickname">
+        <div class="form__block_title">暱稱<span class="star"> *</span></div>
+          <div class="form__block_describe">該如何稱呼你</div>
+          <div><input type="text" id="nickname" name="nickname" placeholder="您的回答"></div>
+          <div class="require hidden">這是必填問題</div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_type">
+        <div class="form__block_title">報名類型<span class="star"> *</span></div>
+        <div class="form__block_content">
+          <input type="radio" name="type" id="basic" /><label for="basic"> 從零到一基礎班（兩個月後開始收保證金
+          5000，淘汰不退還，結業後兩個月內找到工作付一個月半薪水，沒工作不用付）</label>
+          <br>
+          <input type="radio" name="type" id="engineer" /><label for="engineer"> 在職工程師加強班（兩個月後開始收保證金
+          5000，三個月時收學費 35000 元台幣，被淘汰不退還）</label>
+        </div>
+        <div class="require hidden">這是必填問題</div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_occupation">
+        <div class="form__block_title">現在的職業<span class="star"> *</span></div>
+        <div class="form__block_describe">範例：學生、前端工程師、待業中、業務</div>
+        <div class="form__block_content"><input type="text" id="occupation" name="occupation" placeholder="您的回答"></div>
+        <div class="require hidden">這是必填問題</div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_how">
+        <div class="form__blockorm_title">怎麼知道這個計畫的？<span class="star"> *</span></div>
+        <div class="form__block_content"><input type="text" id="how" name="how" placeholder="您的回答"></div>
+        <div class="require hidden">這是必填問題</div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_programming_background">
+        <div class="form__block_title">是否有程式相關背景？<span class="star"> *</span></div>
+        <div class="form__block_describe">範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</div>
+        <div class="form__block_content"><input type="text" id="programming_background" name="programming_background" placeholder="您的回答"></div>
+        <div class="require hidden">這是必填問題</div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_optional_say_something">
+        <div class="form__block_title">其他</div>
+        <div class="form__block_describe">任何你想說的</div>
+        <div class="form__block_content"><input type="text" id="say_something" name="say_something" placeholder="您的回答"></div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="form__block form__block_optional_submit">
+          <input id ="summit_btn" name="summit_btn" type="submit" value="提交"/>
+          <div class="summit_block_notice">切勿通過 Google 表單提交密碼。</div>
+      </div>
+      <footer>
+          此内容不是由 Google 所創建，Google 不對其作任何擔保。
+            <a href="https://pse.is/H2DFM" target="_blank" style="color: grey;"> 舉報濫用行為</a>
+            <a href="https://pse.is/GBP2B" target="_blank" style="color: grey;"> - 服務條款</a>
+            <div class="footer_logo">
+              <img id="footer_logo_pic" src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_dark_clr_74x24px.svg" alt="Google" height="24px" width="74px">
+              <span class="footer_logo_text">表单</span>
+            </div>
+        </footer>
+    </form>
+    
+  </div>
+  <script>
+
+    function showResults(){
+      let email = document.getElementById('email');
+      let nickname = document.getElementById('nickname');
+      let basic = document.getElementById('basic');
+      let enginner = document.getElementById('engineer');
+      let occupation = document.getElementById('occupation');
+      let how = document.getElementById('how');
+      let programming_background = document.getElementById('programming_background');
+      let other = document.getElementById('say_something');
+
+      if(email.value === ''){
+        alert('必填欄位沒有完成，無法提交表單')
+        document.querySelector('.form__block_email').classList.add('no_answer');
+        document.querySelector('#email').classList.add('no_answer');
+        document.querySelector('.form__block_email > .require').classList.remove('hidden');
+        return false;
+      } else if(email.value.indexOf("@") === -1 || email.value.length < 3){
+        alert('請輸入完整電子郵件地址（需包含 @ 的符號）');
+        document.querySelector('.form__block_email').classList.add('no_answer');
+        document.querySelector('#email').classList.add('no_answer');
+        document.querySelector('.form__block_email > .require').classList.remove('hidden');
+        return false;
+      } else if(nickname.value === ''){
+        alert('必填欄位沒有完成，無法提交表單');
+        document.querySelector('.form__block_nickname').classList.add('no_answer');
+        document.querySelector('#nickname').classList.add('no_answer');
+        document.querySelector('.form__block_nickname > .require').classList.remove('hidden');
+        return false;
+      } else if( !basic.checked && !enginner.checked ){
+        alert('必填欄位沒有完成，無法提交表單');
+        document.querySelector('.form__block_type').classList.add('no_answer');
+        document.querySelector('.form__block_type > .require').classList.remove('hidden');
+        return false;
+      } else if(occupation.value === ''){
+        alert('必填欄位沒有完成，無法提交表單');
+        document.querySelector('.form__block_occupation').classList.add('no_answer');
+        document.querySelector('#occupation').classList.add('no_answer');
+        document.querySelector('.form__block_occupation > .require').classList.remove('hidden');
+        return false;
+      } else if(how.value === ''){
+        alert('必填欄位沒有完成，無法提交表單');
+        document.querySelector('.form__block_how').classList.add('no_answer');
+        document.querySelector('#how').classList.add('no_answer');
+        document.querySelector('.form__block_how > .require').classList.remove('hidden');
+        return false;
+      }else if(programming_background.value === ''){
+        alert('必填欄位沒有完成，無法提交表單');
+        document.querySelector('.form__block_programming_background').classList.add('no_answer');
+        document.querySelector('#programming_background').classList.add('no_answer');
+        document.querySelector('.form__block_programming_background > .require').classList.remove('hidden');
+        return false;
+      } else{
+        console.log(email.value);
+        console.log(nickname.value);
+        console.log(basic.checked.value);
+        alert('Submitted!');
+        return true;
+      } 
+    }  
+  </script>
+</body>
+</html>
