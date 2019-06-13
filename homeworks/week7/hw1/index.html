@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>Week7__homework1</title>
+    <style>
+        .wrapper{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .btnHidden{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">請在變色時點擊銀幕   
+    <div>   <button class="btnHidden">再試一次</button>
+    </div> </div>
+    <script>
+        let block = document.querySelector('body')
+        let btn = document.querySelector('button')
+        let timeStart = null;
+        let timeEnd = null;
+        let randomStart = null;
+
+        function RandonColor(n,min,max){
+            let arr=[];
+            for(let i = 0; i < n; i += 1){
+               arr[i] = parseInt(Math.random()*(max-min));
+                for(let j = 0; j < i; j += 1){
+                    if(arr[i] === arr[j]){
+                        i = i-1;
+                        break;
+                    }
+                }
+            }
+            return `rgba(${arr[0]}, ${arr[1]} , ${arr[2]}, 0.5)`;
+        }
+
+        function game() {
+            timeStart = null;
+            block.style.background = 'white';
+            let color = RandonColor(3,0,255)
+            randomStart = setTimeout(()=>{
+                block.style.background = color;
+                timeStart = new Date();
+                }, (Math.floor( Math.random() * 3) + 1 ) * 1000)
+        }
+
+        game() 
+
+        document.addEventListener('click',function(){ 
+            if (timeStart === null){
+                clearTimeout(randomStart);
+                alert('還沒變色喔，失敗！')
+            }else{ 
+                timeEnd = new Date();
+                alert(`一共花了： ${((timeEnd - timeStart)/1000).toFixed(2)} 秒`)  
+            }
+            btn.classList.toggle('btnHidden')
+        })
+
+        btn.addEventListener('click',(e)=>{
+            btn.classList.toggle('btnHidden')
+            game()
+            e.stopPropagation()
+        })
+
+    </script>
+</body>
+</html>

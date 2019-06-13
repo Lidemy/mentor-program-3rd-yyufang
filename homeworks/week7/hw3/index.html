@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Week7__homework3</title>
+  <style> 
+    .wrapper{
+      width: 430px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      padding: 10px;
+    }
+    .result{
+      height: 50px;
+      width: 430px;
+      line-height: 40px;
+      text-align: right;
+      border: 1px rgba(128,128,128,0.5) solid;
+      font-size: 30px;
+    }
+    .btn__row{
+      margin-top: 10px;
+      width: 430px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .AC{
+      height: 40px;
+      width: 100px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      transition: all 0.5s;
+      font-size: 18px;
+    }
+
+    .AC:hover{
+      background: rgba(128,128,128,0.5);
+    }
+
+    .digit{
+      height: 40px;
+      width: 100px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      transition: all 0.5s;
+      font-size: 18px;
+    }
+
+    .digit:hover{
+      background: rgba(128,128,128,0.5);
+    }
+
+    .operator{
+      height: 40px;
+      width: 100px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      transition: all 0.5s;
+      font-size: 18px;
+    }
+    .operator:hover{
+      background: rgba(128,128,128,0.5);
+    }
+
+    .equal{
+      height: 40px;
+      width: 210px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      background: orange;
+      transition: all 0.5s;
+      font-size: 18px;
+    }
+
+    .equal:hover{
+      background: rgb(216, 148, 21);
+    }
+
+    .decimal_point{
+      height: 40px;
+      width: 100px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px rgba(128,128,128,0.5) solid;
+      transition: all 0.5s;
+      font-size: 18px;
+    }
+
+    .decimal_point:hover{
+      background: rgba(128,128,128,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="result">0</div>
+    <div class="btn">
+      <div class="btn__row">
+        <botton class="AC">AC</botton>
+        <botton class="operator" data-value="÷">÷</botton>
+      </div>
+      <div class="btn__row">
+        <botton class="digit">7</botton>
+        <botton class="digit">8</botton>
+        <botton class="digit">9</botton>
+        <botton class="operator" data-value="x">×</botton>
+      </div>
+      <div class="btn__row">
+          <botton class="digit">4</botton>
+          <botton class="digit">5</botton>
+          <botton class="digit">6</botton>
+          <botton class="operator" data-value="-">−</botton>
+      </div>
+      <div class="btn__row">
+          <botton class="digit">1</botton>
+          <botton class="digit">2</botton>
+          <botton class="digit">3</botton>
+          <botton class="operator" data-value="+">+</botton>
+      </div>
+      <div class="btn__row">
+          <botton class="digit">0</botton>
+          <botton class="decimal_point">.</botton>
+          <botton class="equal" >=</botton>
+      </div>
+    </div>
+    <script>
+      let result = document.querySelector('.result'); //string
+      let tmpResult = '';
+      let operate = '';
+      let operation = false; //紀錄上個按鈕是否為運算子
+
+      document.querySelector('.btn').addEventListener('click',(e)=>{
+        // 數字
+        if (e.target.className === 'digit'){
+          if (result.innerText === '0' || operation === true){
+            result.innerText = ''
+            result.innerText += e.target.innerText
+            operation = false;
+          }else{
+            result.innerText += e.target.innerText
+          }
+        }
+        // 加減運算
+        if (e.target.className === 'operator' || e.target.className === 'equal'){
+          if (operate === ''){ //第一次觸發運算子
+            operate = e.target.getAttribute('data-value')
+            tmpResult = result.innerText 
+          }else{
+            if(operate === '+'){ //上一輪的運算子為加法
+              result.innerText = parseInt(result.innerText) + parseInt(tmpResult) //讓頁面顯示目前結果
+            }else if(operate === '-'){ //上一輪的運算子為減法
+              result.innerText = parseInt(tmpResult) - parseInt(result.innerText) //讓頁面顯示目前結果
+            }
+            operate = e.target.getAttribute('data-value') //把運算子改成這輪的輸入
+            tmpResult = result.innerText  //把目前結果暫存
+            }
+            operation = true;
+        }
+        // 鍵入 AC 時歸零
+        if (e.target.className === 'AC'){
+          result.innerText = '0'; 
+          tmpResult = '';
+          operate = '';
+        }
+      })
+    </script>
+</body>
+</html>
