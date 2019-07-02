@@ -1,0 +1,44 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 30px;
+    color: gray;
+}
+.btn{
+    margin: 50px 20px 0;
+    height: 60px;
+    width: 60px;
+    font-size: 12pt; 
+    border-radius: 50%;
+    background:white;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.25s all;
+}
+.btn:hover{
+    background: gray;
+    color: white;
+}
+.prize{
+    margin: 50px 0px 50px;
+    color:gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 35px;
+}
+.win_first{
+    color: #000000;
+    background: #87CEFA;
+}
+.win_other{
+    color: #000000;
+    background: #FFFFFF;
+}
+.no_winning{
+    color: #FFFFFF;
+    background: #000000;
+}

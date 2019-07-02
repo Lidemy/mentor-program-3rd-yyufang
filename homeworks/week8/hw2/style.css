@@ -1,0 +1,34 @@
+.new_post{
+    padding: 10px 60px 0px;
+}
+#btn{
+    background: rgb(249, 208, 133);
+    color: gray;
+    border-radius: 5px;
+}
+.view_posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 50px 0px;
+}
+.post{
+    padding: 10px;
+}
+.id{
+    background:orange;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0px 0px;
+}
+.content{
+    padding: 5px;
+    margin: 10px 5px 0px;
+    border: 2px solid #f3dcb0;
+    width: 250px;
+    height: 150px;
+}
